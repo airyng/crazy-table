@@ -1,4 +1,6 @@
-export default function TablePagination ({ pages, onChangePage, activePage }) {
+import PropTypes from 'prop-types';
+
+function TablePagination ({ pages, onChangePage, activePage }) {
   
   function handleClick (i) {
     return () => { onChangePage(i) }
@@ -21,3 +23,11 @@ export default function TablePagination ({ pages, onChangePage, activePage }) {
 
   return ( <div className="d-flex"> { renderButtons(pages) } </div> )
 }
+
+TablePagination.propTypes = {
+  pages: PropTypes.number.isRequired,
+  activePage: PropTypes.number.isRequired,
+  onChangePage: PropTypes.func.isRequired
+}
+
+export default TablePagination

@@ -1,6 +1,8 @@
 import {useRef} from 'react'
+import PropTypes from 'prop-types';
 
-export default function TableSearchField ({ onChange }) {
+
+function TableSearchField ({ onChange }) {
 
   const textInput = useRef(null);
 
@@ -28,3 +30,9 @@ export default function TableSearchField ({ onChange }) {
     </div>
   )
 }
+
+TableSearchField.propTypes = {
+  onChange: PropTypes.func.isRequired
+}
+
+export default TableSearchField

@@ -1,4 +1,6 @@
-export default function TableRow ({ item }) {
+import PropTypes from 'prop-types';
+
+function TableRow ({ item }) {
 
   return (
     <tr>
@@ -9,3 +11,8 @@ export default function TableRow ({ item }) {
   )
 }
 
+TableRow.propTypes = {
+  item: PropTypes.object.isRequired
+}
+
+export default TableRow
